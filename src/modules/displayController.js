@@ -1,4 +1,5 @@
 import Gameboard from "./gameBoard.js";
+import { startNewGame } from "../index.js";
 
 let playerBoard = document.querySelector("#player-board");
 const enemyBoard = document.querySelector("#enemy-board");
@@ -32,12 +33,12 @@ export function renderShips(boardId, gameboard, isPlayerBoard = false) {
   for (let x = 0; x < 10; x++) {
     for (let y = 0; y < 10; y++) {
       const shipInstance = gameboard.grid[x][y];
-      
+
       if (shipInstance !== null) {
         const cell = document.querySelector(
-          `${boardId} .cell[data-x="${x}"][data-y="${y}"]`
+          `${boardId} .cell[data-x="${x}"][data-y="${y}"]`,
         );
-        
+
         if (!cell) continue;
 
         if (isPlayerBoard) {
@@ -114,4 +115,17 @@ export function setupPlacementListeners(gameInstance) {
   });
 }
 
+export function showGameOver(winnerName) {
+  const modal = document.getElementById("game-over-modal");
+  const message = document.getElementById("winner-message");
+  const restartBtn = document.getElementById("restart-btn");
 
+  const displayName = winnerName ? winnerName.toUpperCase() : "SOMEONE";
+  message.textContent = `${displayName} WON!`;
+  modal.classList.remove("hidden");
+
+  restartBtn.onclick = () => {
+    modal.classList.add("hidden");
+    startNewGame();
+  };
+}

@@ -16,13 +16,20 @@
     </div>
     <div class="game-container">
       <div class="board-wrapper">
-        <h2>Your Boats</h2>
+        <h2>Your Ships</h2>
         <div id="player-board" class="grid"></div>
       </div>
 
       <div class="board-wrapper">
         <h2 class="attack-header">Attack your opponent!</h2>
         <div id="enemy-board" class="grid"></div>
+      </div>
+    </div>
+
+    <div id="game-over-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="winner-message">PLAYER WON</h2>
+        <button id="restart-btn">Play Again</button>
       </div>
     </div>
 

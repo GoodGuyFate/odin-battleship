@@ -170,6 +170,7 @@ h2 {
   background-image: radial-gradient(circle, #ff9999 10%, transparent 11%);
   border: 2px solid rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .controls {
@@ -214,6 +215,33 @@ button:disabled {
   cursor: not-allowed;
   filter: grayscale(1);
   border-color: #222;
+}
+
+.modal {
+  position: fixed;
+  inset: 0; 
+  background-color: rgba(16, 27, 39, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background-color: #1e293b; 
+  padding: 40px;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  text-align: center;
+  border-radius: 8px;
+}
+.modal-content h2 {
+  background: none;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #e0e0e0;
 }
 
 footer {

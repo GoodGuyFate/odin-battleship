@@ -1,7 +1,8 @@
 import Gameboard from "./gameBoard.js";
 
 export default class Player {
-  constructor(type) {
+  constructor(name, type) {
+    this.name = name;
     this.type = type;
     this.gameboard = new Gameboard();
   }
