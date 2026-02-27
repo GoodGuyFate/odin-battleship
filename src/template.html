@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Battleship</title>
-</head>
-<body>
-    <h1>Test</h1>
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>BATTLESHIP</h1>
+    </header>
+
+    <div class="controls">
+      <button id="randomize-btn">Randomize My Ships</button>
+      <button id="start-btn">Start Game</button>
+    </div>
+    <div class="game-container">
+      <div class="board-wrapper">
+        <h2>Your Boats</h2>
+        <div id="player-board" class="grid"></div>
+      </div>
+
+      <div class="board-wrapper">
+        <h2 class="attack-header">Attack your opponent!</h2>
+        <div id="enemy-board" class="grid"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p id="copyright-text">
+        &copy; <span id="current-year"></span>
+        <a
+          href="https://github.com/GoodGuyFate"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          >Goodguyfate</a
+        >. All rights reserved.
+      </p>
+    </footer>
+  </body>
 </html>
