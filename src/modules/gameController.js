@@ -27,12 +27,6 @@ export default class Game {
     const shipAtTarget = opponent.gameboard.getSlot(coords);
     const result = this.currentPlayer.play(opponent.gameboard, coords);
 
-    // temp for testing
-    if (result === true) {
-      showGameOver(this.currentPlayer.name);
-      return result;
-    }
-
     if (shipAtTarget && shipAtTarget.isSunk()) {
       console.log("Sunk!");
     }
