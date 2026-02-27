@@ -28,7 +28,7 @@ export default class Game {
     const result = this.currentPlayer.play(opponent.gameboard, coords);
 
     if (shipAtTarget && shipAtTarget.isSunk()) {
-      console.log("Sunk!");
+      console.log("Sunk!"); // can do something interesting with the ui here
     }
 
     if (opponent.gameboard.allShipsSunk()) {

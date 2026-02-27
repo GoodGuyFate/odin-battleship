@@ -1,9 +1,6 @@
 import Gameboard from "./gameBoard.js";
 import { startNewGame } from "../index.js";
 
-let playerBoard = document.querySelector("#player-board");
-const enemyBoard = document.querySelector("#enemy-board");
-
 export function renderGrid(boardContainer) {
   for (let i = 0; i < 100; i++) {
     const cell = document.createElement("div");
