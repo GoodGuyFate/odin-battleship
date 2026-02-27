@@ -22,8 +22,14 @@ export function initializeLayout() {
   playerBoard.innerHTML = "";
   enemyBoard.innerHTML = "";
 
-  renderGrid(playerBoard);
-  renderGrid(enemyBoard);
+  const newPlayerBoard = playerBoard.cloneNode(true);
+  const newEnemyBoard = enemyBoard.cloneNode(true);
+  
+  playerBoard.parentNode.replaceChild(newPlayerBoard, playerBoard);
+  enemyBoard.parentNode.replaceChild(newEnemyBoard, enemyBoard);
+
+  renderGrid(newPlayerBoard);
+  renderGrid(newEnemyBoard);
 }
 
 export function renderShips(boardId, gameboard, isPlayerBoard = false) {
@@ -99,7 +105,7 @@ function updateBoardUI(boardId, gameboard) {
 export function setupPlacementListeners(gameInstance) {
   const randomizeBtn = document.querySelector("#randomize-btn");
 
-  randomizeBtn.addEventListener("click", () => {
+  randomizeBtn.onclick = () => {
     gameInstance.player1.gameboard = new Gameboard();
     gameInstance.autoPlaceShips(gameInstance.player1);
 
@@ -109,7 +115,7 @@ export function setupPlacementListeners(gameInstance) {
     });
 
     renderShips("#player-board", gameInstance.player1.gameboard, true);
-  });
+  };
 }
 
 export function showGameOver(winnerName) {
