@@ -15,4 +15,15 @@ describe("Ship class", () => {
         cruiser.hit()
         expect(cruiser.hits).toBe(1)
     })
+
+    test("should sink when hits equal length", () => {
+        cruiser.hit()
+        cruiser.hit()
+        cruiser.hit()
+        expect(cruiser.isSunk()).toBe(true)
+    })
+
+    test("should NOT be sunk initially", () => {
+        expect(cruiser.isSunk()).toBe(false)
+    })
 })
