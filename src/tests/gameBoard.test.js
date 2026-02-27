@@ -1,4 +1,4 @@
-import Gameboard from "../modules/gameboard";
+import Gameboard from "../modules/gameBoard";
 import Ship from "../modules/ship";
 
 describe("Gameboard class", () => {
