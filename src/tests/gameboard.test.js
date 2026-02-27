@@ -61,4 +61,14 @@ describe("Gameboard class", () => {
     expect(board.receiveAttack([0, 0])).toBe(true);
     expect(board.receiveAttack([0, 0])).toBe("already attacked");
   });
+
+  test("allShipsSunk should correctly report game status", () => {
+    const boat = new Ship(1);
+    board.placeShip(boat, [0, 0], "horizontal");
+    expect(board.allShipsSunk()).toBe(false);
+
+    board.receiveAttack([0, 0]);
+
+    expect(board.allShipsSunk()).toBe(true);
+  });
 });
